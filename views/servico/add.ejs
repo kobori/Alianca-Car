@@ -1,0 +1,183 @@
+<% include ../partials/header %>
+
+<h1 class="text-center" style="margin-top: 3%;">Cadastro de Cliente</h1> 
+<div class="container border" style="margin-top: 3%;">
+  <div class="row">
+    <div class="col-md-12">
+
+      <form action="/add" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="nome" class="col-form-label">Nome</label>
+            <input autofocus type="text" class="form-control" name="nome" id="nome" placeholder="Nome do cliente">
+          </div>     
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="celular" class="col-form-label">Tel. Cel:</label>
+            <input type="text" class="form-control" name="celular" id="celular" placeholder="Celular">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="telefone" class="col-form-label">Tel. Res:</label>
+            <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone recidencia">
+          </div>
+        </div>  
+
+        <div class="form-group">
+          <label for="endereco" class="col-form-label">Endereço</label>
+          <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Endereço">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="cidade" class="col-form-label">Cidade</label>
+            <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="estado" class="col-form-label">Estado</label>
+            <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="cep" class="col-form-label">CEP</label>
+            <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
+          </div>
+        </div> <hr>
+      
+        <h2>Descrição de Serviços</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="servicoR">Serviços</label>
+            <select class="form-control" name="servicoR" id="servicoR">
+              <option></option> 
+              <option>Funilaria</option>
+              <option>Pintura</option>
+              <option>Mecânica</option>
+              <option>Elétrica</option>
+              <option>Transferência</option>
+              <option>Shaken</option>
+            </select>
+          </div>     
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label class="col-form-label" for="outros">Outros</label>
+            <input type="text" class="form-control" name="outros" id="outros" placeholder="Outros tipos de serviços"> 
+          </div>              
+        </div>
+
+        <p>
+          <a class="btn btn-outline-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Observação
+          </a>
+        <div class="collapse" id="collapseExample">
+          <div class="form-group ">
+            <label for="obs">Observeções</label>
+            <textarea class="form-control" name="obs" id="obs" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="notas">Descrição do produto/peça</label>
+            <textarea class="form-control" name="notas" id="notas" rows="6"></textarea>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="valorPeca" class="col-form-label">Valor</label>
+            <input type="text" class="form-control" name="valorPeca" id="valorPeca" > 
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <p>Daisha</p>
+            <label for="daishaS" class="custom-control custom-checkbox">  
+              <input type="checkbox" class="custom-control-input" name="daishaS" id="daishaS" value="sim">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Sim</span>
+            </label>
+            
+            <label for="daishaN" class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="daishaN" id="daishaN"  value="não">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Não</span>
+            </label> 
+
+            <small>(Favor assinar o termo de responsabilidade do empréstimo do daisha)</small>
+          </div>        
+        </div>
+
+        <div class="form-row">
+          <div class="form-inline">      
+            <label class="col-form-label" for="marca">Marca:</label>
+            <input type="text" class="form-control col-md-6 border-top-0 border-left-0 border-right-0 rounded-0" name="marca" id="marca">
+          </div>  
+
+          <div class="form-inline">      
+            <label class="col-form-label" for="modelo">Modelo:</label>
+            <input type="text" class="form-control col-md-6 border-top-0 border-left-0 border-right-0 rounded-0" name="modelo" id="modelo">
+          </div>  
+
+          <div class="form-inline">      
+            <label class="col-form-label" for="placa">Placa:</label>
+            <input type="text" class="form-control col-md-6 border-top-0 border-left-0 border-right-0 rounded-0" name="placa" id="placa">
+          </div>  
+        </div> <hr>
+
+        <h2>Condições De Pagamento</h2><br>
+
+        <div class="row">
+          <div class="form-group col-md-2">
+            <label class="form-inline" for="avista"> A Vista: </label>
+            <input type="text" class="form-control " name="avista" id="avista">
+          </div>  
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-inline">
+            <label class="col-form-label" for="parcela"> Parcelado em: </label>
+            <input type="text" class="form-control col-md-1 border-top-0 border-left-0 border-right-0 rounded-0" name="parcela" id="parcela">
+
+            <label class="col-form-label" for="parValor">Vezes de: </label>
+            <input type="text" class="form-control col-md-2 border-top-0 border-left-0 border-right-0 rounded-0" name="parValor" id="parValor">
+
+             <label class="col-form-label" for="entrada"> entrada: </label>
+            <input type="text" class="form-control col-md-3 border-top-0 border-left-0 border-right-0 rounded-0" name="entrada" id="entrada">
+          </div>   
+        </div><br>
+
+
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <label class="" for="vtotal"> Valor Total: </label>
+            <input type="text" class="form-control col-md-4" name="vtotal" id="vtotal">
+          </div>  
+        </div> <br> 
+
+        <div class="row">
+          <div class="col-md-3">
+            <label for="dataC" class="col-form-label">Data de Pedido</label>
+            <input type="date" class="form-control" name="dataC" id="dataC" placeholder="Data de cadastro">
+          </div> 
+        </div>   
+    
+
+        <br><br>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <a href="/orcamento" class="btn btn-primary">Voltar</a>
+      </form><br>
+
+    </div>
+  </div>
+</div> <br> 
+
+<% include ../partials/footer %>

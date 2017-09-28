@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+
+<div class="container-fluid" style="margin-top: 2%;">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h1 class="text-center" style="border: 1px solid; border-left: none; border-right: none;">Contratos</h1><br>
+          
+      <table class="table table-sm table-striped table-hover">
+        <header>
+          <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Data de registro</th>
+            <th></th>
+          </tr> 
+        </header>
+        <tbody>
+        <% contratos.forEach(contrato => { %>
+          <tr>
+            <td> <%=contrato.id%> </td>
+            <td> <%=contrato.nome%> </td>
+            <td> <%=contrato.celular%> </td>
+            <td> <%=contrato.dataP%> </td>
+            <td>
+              <a href="/contrato/<%=contrato.id%>" class="btn"><i class="material-icons md-36">visibility</i></a>
+              <a class="btn " href="/cadastro" onclick="event.preventDefault(); document.getElementById('logout-form-<%=contrato.id%>').submit(); "><i class="material-icons md-36 md-red">delete</i></a>
+            </td>
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
+
+<% include ../partials/footer.ejs %>

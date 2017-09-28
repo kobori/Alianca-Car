@@ -1,0 +1,90 @@
+@media print{
+  *{
+    background:transparent !important;
+    color:#000 !important;
+    text-shadow:none !important;
+    filter:none !important;
+    -ms-filter:none !important;
+
+  }
+  
+  body {
+    margin:0;
+    padding:0;
+    line-height: 1.4em;
+  }
+
+  @page{
+    margin: 0.5cm;
+  }
+
+  .page-break { page-break-before: always; }
+
+  nav, footer, video, audio, object, embed { 
+    display:none; 
+  }
+
+  .print {
+    display:block;
+  }
+
+  .no-print { 
+    display:none; 
+  }
+
+  .print {
+    display:none;
+  }
+
+  .no-print { 
+    display:block; 
+  }
+
+  .wrap { 
+    width: 100% !important; 
+    margin: 0px;
+    float: none !important;
+  }
+    
+  h1{
+    font-size: 32px;
+    margin: -13px 0px 0px 0px !important;
+  }  
+  p{
+    margin: 0px 0px 5px 0px;
+  }
+  hr{
+    display: none;
+  }
+  br{
+    display: none;
+  }
+  .imprimir{
+    width: 100%;
+  }
+  .pagina{
+    margin: 0px;
+  }
+}
+
+.clausula{
+  font-size: 24px;
+  margin: 0px;
+  padding: 0px;
+
+}
+ 
+.printContrato{
+  font-size: 28px; 
+   
+} 
+
+
+
+
+
+
+
+
+
+

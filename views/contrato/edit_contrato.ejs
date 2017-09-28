@@ -1,0 +1,185 @@
+<% include ../partials/header.ejs %>
+
+
+<h1 class="text-center" style="margin: 3% 0px 3% 0px;">Contrato De Compra e Venda de Veículo</h1> 
+<div class="container border" style="margin-bottom: 3%;">
+  <div class="row">
+    <div class="col-md-12"><br> 
+
+      <form action="/edit_contrato/<%=contrato.id%>" method="POST">
+        <input type="hidden" name="_method" value="put">
+        
+        <div class="form-group">
+          <label class="form-control-label" for="nome">COMPRADOR</label>
+          <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do cliente" value="<%=contrato.nome%>">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="habilitacao">Carteira de habilitação</label>
+          <input type="text" class="form-control" name="habilitacao" id="habilitacao" placeholder="habilitação" value="<%=contrato.habilicao%>">
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="endereco">Endereço</label>
+          <input type="text" class="form-control" name="endereco" id="endereco" placeholder="Endereço" value="<%=contrato.endereco%>">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="telefone" class="col-form-label">Tel. Residencial</label>
+            <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone" value="<%=contrato.telefone%>">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="celular" class="col-form-label">Tel. Celular</label>
+            <input type="text" class="form-control" name="celular" id="celular" placeholder="Celular" value="<%=contrato.celular%>">
+          </div>
+        </div>
+
+        <p> <strong>Vendedor: </strong> Aliança Car (Kobori Gustavo)</p><hr>
+
+        <p class="text-center"><u>DO OBJETO DO CONTRATO</u></p>
+        <div class="form-row">
+          <p>O Presente Contrato tem como  OBJETO,</p>
+          <div class="form-group col-md-8">
+            <label for="marca" class="col-form-label">o veículo de marca:</label>
+            <input type="text" class="form-control" name="marca" id="marca" placeholder="Marca do veículo" value="<%=contrato.marca%>">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="modelo" class="col-form-label">Modelo:</label>
+            <input type="text" class="form-control" name="modelo" id="modelo" placeholder="Modelo do veículo" value="<%=contrato.modelo%>">
+          </div>
+          
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="ano">Ano:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="ano" id="ano" value="<%=contrato.ano%>">
+          </div>  
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="km">Km:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="km" id="mk" value="<%=contrato.km%>">
+          </div>  
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="chassi">Chassi:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="chassi" id="chassi" value="<%=contrato.chassi%>">
+          </div>  
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="placa">Placa:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="placa" id="placa" value="<%=contrato.placa%>">
+          </div>  
+        </div><hr>
+
+        <p class="text-center"><u>RESPONSABILIDADES</u></p>
+
+        <p>O <strong>VENDEDOR</strong> se responsabilizará pelo bom estado e funcionamento de <u>Motor e Câmbio</u> do veículo pelo prazo de <input type="text" class="border-top-0 border-left-0 border-right-0 rounded-0" style="width: 4%; padding: 0px;" name="meses" id="meses" value="<%=contrato.meses%>"> meses, contando a partir da assinatura deste documento pelas partes. Enquanto durar esse prazo, o <strong>COMPRADOR</strong> deverá realizar revisões com a periodicidade indicada pelo fabricante do veículo. O <strong>VENDEDOR</strong> não se responsabilizará pelos danos causados no veículo por negligência do <strong>COMPRADOR</strong> nem por problemas decorrentes da não realização das revisões.</p><hr>
+
+        <p class="text-center"><u>DO PREÇO</u></p>
+        
+       
+        <div class="form-inline">
+            <label for="quantia"> <p>O <strong> COMPRADOR </strong> pagará, pela compra do veículo, a quantia de 
+            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 12%; padding: 0px; padding-left: 5px;" name="quantia" id="quantia" value="<%=contrato.quantia%>"> conforme as condições especificadas abaixo:</p></label>
+        </div>
+
+        <div class="form-inline">
+          <label for="avista" class="custom-control"> Pagamento à vista:   
+            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" name="avista" id="avista" style="padding: 0px; padding-left: 5px;" value="<%=contrato.avista%>"> 
+          </label> 
+        </div> <br> 
+
+
+        <div class="form-row">
+
+          <div class="form-inline col-md-3">
+            <label for="parcela" class="col-form-label"> Parcelado em:</label>   
+              <input type="text" class="form-control col-md-4 border-top-0 border-left-0 border-right-0 rounded-0" name="parcela" id="parcela" style="padding: 0px; padding-left: 5px;" value="<%=contrato.parcela%>"> 
+          </div>
+
+          <div class="form-inline col-md-3">
+            <label for="parcelaV" class="col-form-label" style="margin-left: -30px; "> vezes de: </label>  
+              <input type="text" class="form-control col-md-4 border-top-0 border-left-0 border-right-0 rounded-0" name="parcelaV" id="parcelaV" style="padding: 0px; padding-left: 5px;" value="<%=contrato.parcelaV%>"> 
+          </div>
+
+          <div class="form-inline col-md-6">
+            <label for="entradaV" class="col-form-label" style="margin-left: -22%; "> Valor da entrada: </label>  
+              <input type="text" class="form-control col-md-6 border-top-0 border-left-0 border-right-0 rounded-0" name="entradaV" id="entradaV" style="padding: 0px; padding-left: 5px;" value="<%=contrato.entradaV%>"> 
+          </div>           
+        </div> <br>
+
+        <div class="form-row">
+          <div class="form-inline col-md-12">
+            <label for="shitadori" class="col-form-label"> SHITADORI: </label>  
+              <input type="text" class="form-control col-md-1 border-top-0 border-left-0 border-right-0 rounded-0" name="shitadori" id="shitadori" style="padding: 0px; padding-left: 7px;" value="<%=contrato.shitadori%>"> 
+          </div> 
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="shitaMarca">Marca:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="shitaMarca" id="shitaMarca" value="<%=contrato.shitaMarca%>">
+          </div>  
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="shitaModelo">Modelo:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="shitaModelo" id="shitaModelo" value="<%=contrato.shitaModelo%>">
+          </div>  
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="shitaChassi">Chassi:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="shitaChassi" id="shitaChassi" value="<%=contrato.shitaChassi%>">
+          </div>  
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="shitaValor">Valor:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="shitaValor" id="shitaValor" value="<%=contrato.shitaValor%>">
+          </div>
+        </div><br>
+          
+        
+    <!--  <div class="form-inline col-md-12">
+          <label for="dataP" class="col-form-label">Observações referentes às parcelas</label>
+          <input type="date" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" name="dataP" id="dataP" placeholder="Data de cadastro" style="padding: 0px; padding-left: 8px; width: 20%;">
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="vParcela">Valor:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="vParcela" id="vParcela" style="padding: 0px; padding-left: 5px;">
+          </div>
+        </div> --> <br>         
+
+        <h3 class="text-center"> <ins> Cláusulas e condições do contrato </ins></h3>
+       
+        <label class="form-inline">
+          <p>Pelo presente instrumento particular e na forma de direito, de um lado Sr. Ferreira Kobori da Silva Gustavo, portador da carteira de identidade nº FU 6952 4932 JE, residente e domiciliado em Aichi Ken Toyohashi-shi Sato - Cho 1 Choume 9-1 2-1002 denominado como VENDEDOR, e por outro lado o Sr. (Sra.) <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 30%; padding: 0px; padding-left: 5px;" name="comprador" id="comprador" value="<%=contrato.comprador%>"> portator(a) da carteira de identidade nº <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 20%; padding: 0px; padding-left: 5px;" name="idendidade" id="idendidade" value="<%=contrato.idendidade%>">, residente e domiciliado (a) em <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 80%; padding: 0px; padding-left: 5px;" name="residente" id="residente" value="<%=contrato.residente%>">. Neste ato denomidado (a) como <i>COMPRADOR</i> (A), contratam a compra e venda do veículo de<br> Marca: <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 15%; padding: 0px; padding-left: 5px;" name="compradorMarca" id="compradorMarca" value="<%=contrato.compradorMarca%>"> Modelo: <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 15%; padding: 0px; padding-left: 5px;" name="compradorModelo" id="compradorModelo" value="<%=contrato.compradorModelo%>"> Ano: <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 15%; padding: 0px; padding-left: 5px;" name="compradorAno" id="compradorAno" value="<%=contrato.compradorAno%>"> Chassi: <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 15%; padding: 0px; padding-left: 5px;" name="compradorChassi" id="compradorChassi" value="<%=contrato.compradorChassi%>"><br> Placa: <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" style="width: 15%; padding: 0px; padding-left: 5px;" name="compradorPlaca" id="compradorPlaca" value="<%=contrato.compradorPlaca%>">, licenciado na cidade de TOYOHASHI, Achi - ken, mediantes cláusulas e condições a seguir:</p>
+          <p><strong>Cláusula 1º</strong> - O preço da venda será efetuado conforme as condições e valores mencionados no contrato de compra e venda de veículos.</p>
+          <p><strong>Cláusula 2º </strong> - O veículo acima mencionado encontra-se alienado pelo <i>VENDEDOR</i> Ferreira Kobori da Silva Gustavo. O <i>COMPRADOR</i> ficará responsável, após a assinatura do presente e data, pela total quitação das parcelas pendentes, isentando o <i>VENDEDOR</i> de qualquer responsabilidade que venha a correr provenientes de multas, documentação atrasada ou algum tipo de infração e/ou encargos que venha a ocorrer sobre o referido veículo ou a terceiros. </p>
+          <p style="margin: auto; margin-top: -3%;"><b><ins>PARÁGRAFO ÚNICO</ins></b></p>
+          <p>O presente contrato será automaticamente rescindido, independente de qualquer aviso ou interpelação administrativa e/ou judicial, pela ocorrência de infração a qualquer de suas cláusulas, especialmente pelo atraso de 02 (duas) parcelas, sujeito a retomada imediata do veiculo e perda dos valores já pagos.</p>
+          <p><strong>Cláusula 3º</strong> - O <i>VENDEDOR</i> se compromete, após quitação das parcelas pendentes, a assinar e outorgar toda e qualquer documentação necessária para total transferência do referido veículo para o nome do <i>COMPRADOR</i></p>
+          <p><strong>Cláusula 4º</strong> - É vedada ao <i>COMPRADOR</i> vender, ceder, doar ou dar como garantia em qualquer tipo de negociação o referido veículo, antes da total quitação da alienação do mesmo.</p>
+          <p><strong>Cláusula 5º</strong> - O <i>COMPRADOR</i> responderá por todos os danos causados direta ou indiretamente pelo veículo, a si ou a terceiros, e por todos os riscos a que o veículo estiver sujeito pelas consequências daí resultantes.</p>
+          <p><strong>Cláusula 6º</strong> - De comum acordo, as partes convecionam que uma vez rescindida a compra e venda por inadimplência do <i>COMPRADOR</i>, será devida uma multa equivalente a 20% (vinte por cento) sobre o valor do negócio em favor do <i>VENDEDOR</i>, independente das perdas, danos e demais reparações necessárias a recompor o veículo ao seu estado de conservação e utilidade da época da venda.</p>
+          <p><strong>Cláusula 7º</strong> - O presente intrumento é irrevogável e irretratável, não sendo facultativa a nenhuma das partes o direito de arrependimento, bem como seus herdeiros e/ou sucessores deverão cumprir fielmente o disposto.</p>
+          <p>Estando juntos e acordados, os presentes assinam em 02 (duas) vias de igual teor e forma perante a presença de duas testemunhas maiores, capazes e aqui domiciliadas que a tudo presenciaram.</p>
+
+        </label>
+
+
+       
+        <div class="form-inline justify-content-md-center col-md-12" style="margin-top: -3%;">
+          <label for="dataContrato" class="col-form-label">Toyohashi </label>
+          <input style="padding: 0px 0px 0px 8px; width: 20%;" type="date" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" name="dataContrato" id="dataContrato" placeholder="Data de cadastro" value="<%=contrato.dataContrato%>">
+        </div>  
+        
+
+        <br>  
+          
+        <button type="submit" class="btn btn-outline-primary">Salvar</button>
+        <a href="/contratos" class="btn btn-primary">Voltar</a><br><br>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

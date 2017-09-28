@@ -1,0 +1,64 @@
+<% include ../partials/header.ejs %>
+
+<div class="container border" style="margin-top: 2%;margin-bottom: 1%; padding-top: 1%;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row" style="margin: -1% 0px 4% 0px;">
+        <div class="imprimir col-md-6 ml-auto">
+          <p><small>Endereço: 441-8113 Achi-ken Toyohashi-shi Nishi Miyuki-cho Aza Kasamatsu 15. Contato: Kobori Gustavo Cel: 090-879-611 Tel/fax: 0532-47-1824 </small></p>
+        </div>
+      </div>   
+
+
+      <h1 class="text-center">Contrato De Compra e Venda de Veículo</h1><br>
+      <p class="contrato">Nome do comprador: <small class="linha"> <%=contrato.nome%></small></p>
+      <p class="contrato">Carteira de habilitação:<small class="linha"> <%=contrato.habilitacao%></small></p>
+      <p class="contrato">Endereco:<small class="linha"> <%=contrato.endereco%></small></p>
+      <p class="contrato" style="float: left; margin-right: 20%;">Tel. Residencial:<small> <%=contrato.telefone%></small></p>
+      <p class="contrato">Tel. Celular:<small class="linha"> <%=contrato.celular%></small></p>
+      <p> Vendedor: <small>Aliança Car (Kobori Gustavo)</small></p><br>
+
+      <p class="text-center"><strong><u> DO OBJETO DO CONTRATO</u></strong></p>
+
+      <p>O Presente Contrato tem como  OBJETO, o veículo de Marca: <small class="linha"><%=contrato.marca%> </small> Modelo: <small class="linha"><%=contrato.modelo%></small> Ano: <small class="linha"><%=contrato.ano%></small><br> Km: <small class="linha"><%=contrato.km%></small> Chassi: <small class="linha"> <%=contrato.chassi%></small> Placa: <small class="linha"><%=contrato.placa%></small></p> <hr>
+
+      <p class="text-center"><strong><u>RESPONSABILIDADES</u></strong></p>
+
+      <p>O <strong>VENDEDOR</strong> se responsabilizará pelo bom estado e funcionamento de <u><cite>Motor e Câmbio</cite></u> do veículo pelo prazo de <small class="linha"><%=contrato.meses%></small> meses, contando a partir da assinatura deste documento pelas partes. Enquanto durar esse prazo, o <strong>COMPRADOR</strong> deverá realizar revisões com a periodicidade indicada pelo fabricante do veículo. O <strong>VENDEDOR</strong> não se responsabilizará pelos danos causados no veículo por negligência do <strong>COMPRADOR</strong> nem por problemas decorrentes da não realização das revisões.</p><hr>
+      
+      <p class="text-center"><strong><u> DO PREÇO</u></strong></p>
+
+      <p>O <strong><cite>COMPRADOR</cite></strong> pagará, pela compra do veículo, a quantia de <small class="linha"><%=contrato.quantia%></small> conforme as condições especificadas abaixo:</p>
+      <p>Pagamento à vista: <small class="linha"><%=contrato.avista%></small></p>
+      <p>Parcelado em <small class="linha"><%=contrato.parcela%></small> vezes de <small class="linha"><%=contrato.parcelaV%></small>. Valor da entrada: <small class="contrato"><%=contrato.entradaV%></small></p>
+
+      <p>SHITADORI: <small class="linha"><%=contrato.shitadori%></small></p>
+      <p>Marca: <small class="linha"><%=contrato.shitaMarca%></small> Modelo: <small class="linha"><%=contrato.shitaModelo%></small> Chassi: <small class="linha"><%=contrato.shitaChassi%></small> Valor: <small class="linha"><%=contrato.shitaValor%></small></p><br>
+      
+      
+  <!--  <form action="/adData" method="post">
+        <div class="form-inline col-md-12">
+          <label for="novaData" class="col-form-label">Observações referentes às parcelas</label>
+          <input type="date" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" name="novaData" id="novaData" placeholder="Data de cadastro" style="padding: 0px; padding-left: 8px; width: 20%;">
+
+          <div class="form-inline col-md-3">      
+            <label class="col-form-label" for="parcelaPaga">Valor:</label>
+            <input type="text" class="form-control col-md-8 border-top-0 border-left-0 border-right-0 rounded-0" name="parcelaPaga" id="parcelaPaga" style="padding: 0px; padding-left: 5px;">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+        </div><br>
+      </form>
+      -->
+       <% include clausula.ejs %>
+
+      <br><br>
+      <a href="/edit_contrato/<%=contrato.id%>" class="btn btn-outline-primary"><i class="material-icons">border_color</i></a>
+      <a href="/contratos" class="btn btn-outline-primary">Voltar</a><br><br>
+     <!-- <a href="/imprimir/<%=contrato.id%>" class="btn btn-primary btn-sm">Imprimir</a><br><br> -->
+
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

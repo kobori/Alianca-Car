@@ -1,0 +1,45 @@
+<% include ../partials/header.ejs %>
+
+<div class="container" style="padding-top: 2%; margin-top: 3%;">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Cadastro - <%=servico.nome%> </h1>
+      <p>Nome: <small class="linha"><%=servico.nome%></small></p>
+      <p style="float: left; margin-right: 20%;">Tel.Cel: <small class="linha"><%=servico.celular%></small></p>
+      <p>Tel.Res: <small class="linha"><%=servico.telefone%></small></p>
+      <p>Endereço: <small class="linha"><%=servico.endereco%></small></p>
+      <p style="float: left; margin-right: 3%;">Cidade: <small class="linha"><%=servico.cidade%></small></p>
+      <p style="float: left; margin-right: 3%;">Estado: <small class="linha"><%=servico.estado%></small></p>
+      <p>CEP: <small class="linha"><%=servico.cep%></small></p><hr>
+
+      <h1 class="text-center">Descrição de Serviços</h1>
+
+      <p style="float: left; margin-right: 2%;">Serviço: <small class="linha"><%=servico.servicoR%></small></p>
+      <p>Outros: <small class="linha"><%=servico.outros%></small></p>
+      <p style="float: left; margin-right: 2%;">OBS: <small class="linha"><%=servico.obs%></small></p>
+      <p>Anotações: <small class="linha"><%=servico.notas%></small></p>
+      <p>Valor das peças: <small class="linha"><%=servico.valorPeca%></small></p>
+      <p>Daisha <small class="linha"><%=servico.daishaS%> </small> <small>(Favor assinar o termo de responsabilidade do empréstimo do daisha)</small></p>
+      <p style="float: left; margin-right: 5%;">Marca: <small class="linha"><%=servico.marca%></small></p>
+      <p style="float: left; margin-right: 5%;">Modelo: <small class="linha"><%=servico.modelo%></small></p>
+      <p>Placa: <small class="linha"><%=servico.placa%></small></p><hr>
+      
+      <h1 class="text-center">Condições De Pagamento</h1>
+
+      <p>A Vista: <small class="linha"><%=servico.avista%></small></p>
+      <p style="float: left; margin-right: 1%;">Parcelado em: <small class="linha"><%=servico.parcela%></small></p>
+      <p style="float: left; margin-right: 1%;">Vezes de: <small class="linha"><%=servico.parValor%></small></p>
+      <p>Entra: <small class="linha"><%=servico.entrada%></small></p>
+      <p>Valor Total: <small class="linha"><%=servico.vtotal%></small></p>
+      <p>Data de Pedido: <small class="linha"><%=servico.dataC%></small></p>
+      <br>
+
+      <a href="/edit/<%=servico.id%>" class="btn btn-outline-primary"><i class="material-icons">border_color</i></a>
+      <a href="/orcamento" class="btn btn-outline-primary">Voltar</a><br><br>
+
+    </div>
+  </div>
+</div>  
+
+
+<% include ../partials/footer.ejs %>
